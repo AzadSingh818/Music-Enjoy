@@ -1,6 +1,6 @@
 # Azadsingh
 
-`Melophile` is a simple music app which uses [SoundCloud API](https://soundcloud.com/stream).
+`Music-Enjoy` is a simple music app which uses [SoundCloud API](https://soundcloud.com/stream).
 
 # Features #
 - stream music
