@@ -1,4 +1,4 @@
-# Melophile
+# Azadsingh
 
 `Melophile` is a simple music app which uses [SoundCloud API](https://soundcloud.com/stream).
 
@@ -12,32 +12,14 @@
 - browse your listening history
 
 
-# Running #
-- clone repository using `git clone https://github.com/vpaliy/Melophile.git`
-- obtain a `client_id`, `client_secret` key by registering [here](https://developers.soundcloud.com/docs/api/reference).
 
-# Demo #
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/playlist.gif)
-![](https://github.com/vpaliyX/Melophile/blob/master/art/user.gif)
-![](https://github.com/vpaliyX/Melophile/blob/master/art/fourth.png)
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/player.png)
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/second_2.png)
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/first_1.png)
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/third.png)
-
-![](https://github.com/vpaliyX/Melophile/blob/master/art/sixth.png)
 
 ## License ##
 
 ``````
 Apache License
 
-Copyright (c) 2021 Vasyl Paliy
+Copyright (c) 2024 
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
