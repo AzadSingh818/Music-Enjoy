@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+def config=rootProject.ext.configuration;
+def libs=rootProject.ext.dependencies;
+def testLibs=rootProject.ext.testDependencies;
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+    }
+
+    testOptions{
+        unitTests.returnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+afterEvaluate {
+    android.sourceSets.all { sourceSet ->
+        if (!sourceSet.name.startsWith('test') || !sourceSet.name.startsWith('androidTest')) {
+            sourceSet.kotlin.setSrcDirs([])
+        }
+    }
+}
+
+dependencies {
+    compile project(":domain")
+    compile libs.supportAppCompat
+    compile libs.soundcloud
+    compile libs.RxJava
+    compile libs.expiringMap
+    compile libs.retrofit
+    compile libs.retrofitAdapter
+    compile libs.retrofitConverter
+    compile libs.okHttp
+    compile libs.gson
+    compile libs.RxAndroid
+    compile libs.Dagger2
+    annotationProcessor libs.Dagger2Compiler
+    provided libs.javaxAnnotation
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    /* Testing Libraries */
+    testCompile testLibs.mockito
+    testCompile testLibs.robolectric
+    testCompile testLibs.jUnit
+    testCompile "org.powermock:powermock-module-junit4:1.6.4"
+    testCompile "org.powermock:powermock-module-junit4-rule:1.6.4"
+    testCompile "org.powermock:powermock-api-mockito2:1.7.0"
+    testCompile "org.powermock:powermock-classloading-xstream:1.7.0"
+}
+
+repositories {
+    mavenCentral()
+}
